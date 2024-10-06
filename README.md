@@ -1,18 +1,38 @@
 # Web Page Phishing Detection
+## Description
+Supervised machine learning algorithm that supplies a set of datasets for training purposes to detect phishing web pages. 
 
-This is program uses supervised learning, it is a type of machine learning that supplies an algoithm with a set of datasets for training purposes to detect phishing web pages. 
-
-The dataset used for this was from [Kaggle](https://www.kaggle.com/datasets/shashwatwork/web-page-phishing-detection-dataset/data).
-  - 11,430 website URLs
+## Dataset
+- [Kaggle: Web Page Dataset](https://www.kaggle.com/datasets/shashwatwork/web-page-phishing-detection-dataset/data).
+  - Number of data sample: 11,430 website URLs
+  ## Data Preparation
   - 23 features
-    -  Relevent features for this is the ip address and status. The status feature contains string entries indicating whether the web page 
-        is a legitimate site or phishing site. This feature in the model is transform into binary values.
+    -  Cleaning to keep important features: **ip address** and **status** (legitimate site or phishing) in binary form.
+   
+## Data Training and Model 
+- Decision Tree model for prediction modeling of websites
+- Split:
+  1. Training 70%
+  2. Testing 15%
+  3. Validation 15%
 
-         
-  To detect this and create model for this dataset requires spliting of data into 3 categories:
-  1. Training (70%)
-  2. Testing (15%)
-  3. Validation (15%)
+ ## Evaluation
+ | | precision | recall | f1-score |
+ | --- | --- | --- | ---|
+ | **0** | 0.91 | 0.92 | 0.91 |
+ | **1** | 0.92 | 0.91 | 0.92 |
+ |||||
+ | **accuracy**| | | 0.92|
+
+ ```
+False Positive Rate (FPR): 0.0799
+False Negative Rate (FNR): 0.0886
+```
+
+```math
+Confusion Matrix:
+\begin{bmatrix}1555&135\\154&1585\\\end{bmatrix}
+  ```
 
    
     
